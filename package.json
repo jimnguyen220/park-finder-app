@@ -1,33 +1,33 @@
 {
-  "name": "the_blog_log",
+  "name": "park-finder-app",
   "version": "1.0.0",
-  "description": "Blog log the Log Blog",
+  "description": "App to help you locate local parks",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChrisBoisjoli/the_blog_log.git"
+    "url": "git+https://github.com/jimnguyen220/park-finder-app.git"
   },
-  "author": "ChrisBoisjoli",
+  "author": "Jim Nguyen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ChrisBoisjoli/the_blog_log/issues"
+    "url": "https://github.com/jimnguyen220/park-finder-app/issues"
   },
-  "homepage": "https://github.com/ChrisBoisjoli/the_blog_log#readme",
+  "homepage": "https://github.com/jimnguyen220/park-finder-app#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1",
+    "express-handlebars": "^5.3.0",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.1"
+    "sequelize": "^6.6.2"
   }
 }

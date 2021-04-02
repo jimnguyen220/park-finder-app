@@ -3,9 +3,7 @@ const { User, Parks, Amenities, ParkAmenities} = require('../models');
 const withAuth = require('../utils/auth');
 
 
-
-// we have 2 get routes for the home page - also put the login requirement back on
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -49,19 +47,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/results', async (req,res) => {
-  try {
-    const parkAmenitiesData = await ParkAmenities.findAll();
 
-    const parks = parkAmenitiesData.map((project) => project.get({ plain: true }));
-    console.log(parks)
-    res.render('results', {
-      parks,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
 
