@@ -2,8 +2,19 @@ const router = require('express').Router();
 const { User, Parks, Amenities, ParkAmenities} = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/', withAuth, (req, res) => {
+  try {
 
-router.get('/', withAuth, async (req, res) => {
+      res.render('login', {
+          loggedIn: req.session.logged_in,
+          name: req.session.name
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+router.get('/homepage', async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
