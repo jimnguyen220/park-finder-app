@@ -9,11 +9,13 @@ router.get('/', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
     });
+    
     const parkData = await Parks.findAll();
+
     const parkAmenitiesData = await ParkAmenities.findAll({
       include: [{model: Amenities}],
       attributes: {exclude: ['id', 'amenities_id']},
-  });
+    });
 
     const api_key = process.env.API_KEY;
     const maps = `https://maps.googleapis.com/maps/api/js?key=${api_key}&callback=initMap&libraries=&v=weekly`
