@@ -1,6 +1,9 @@
 {
   "name": "park-finder-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.15.4"
+  },
   "description": "App to help you locate local parks",
   "main": "server.js",
   "scripts": {
