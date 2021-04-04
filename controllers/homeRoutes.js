@@ -10,7 +10,7 @@ router.get('/', withAuth, (req, res) => {
           name: req.session.name
       });
   } catch (err) {
-      res.status(500).json(err);
+    process.exit(1);
   }
 });
 
