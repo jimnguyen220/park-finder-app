@@ -7,7 +7,6 @@ router.get('/', withAuth, (req, res) => {
 
       res.render('login', {
           loggedIn: req.session.logged_in,
-          name: req.session.name
       });
   } catch (err) {
     process.exit(1);
