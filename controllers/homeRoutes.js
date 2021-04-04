@@ -7,7 +7,8 @@ router.get('/', withAuth, (req, res) => {
       res.render('login', {
           loggedIn: req.session.logged_in,
       });
-  } catch (err) {
+  } 
+  catch (err) {
     process.exit(1);
   }
 });
@@ -44,7 +45,8 @@ router.get('/homepage', async (req, res) => {
       maps,
       // users,
     });
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
@@ -56,7 +58,8 @@ router.get('/login', (req, res) => {
       return;
     }
     res.render('login');
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
   
@@ -67,7 +70,8 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   try {
     res.render('signup');
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
