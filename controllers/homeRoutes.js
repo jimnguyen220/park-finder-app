@@ -40,7 +40,6 @@ router.get('/homepage', async (req, res) => {
     res.render('homepage', {
       logged_in: req.session.logged_in,
       parkAmenities,
-      api_key,
       parks,
       maps,
       // users,
