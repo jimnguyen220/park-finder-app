@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
   try {
-
       res.render('login', {
           loggedIn: req.session.logged_in,
       });
