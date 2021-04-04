@@ -52,17 +52,26 @@ router.get('/homepage', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
+  try {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+    res.render('login');
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.render('login');
+  
 });
 
 
 
 router.get('/signup', (req, res) => {
-  res.render('signup');
+  try {
+    res.render('signup');
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
