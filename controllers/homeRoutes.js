@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Parks, Amenities, ParkAmenities} = require('../models');
 const withAuth = require('../utils/auth');
 
+
 router.get('/', withAuth, (req, res) => {
   try {
       res.render('login', {
